@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "name": "Big Five 人格特質評估 (BFI-44)",
+    "version": "1.0",
+    "total_items": 44,
+    "estimated_minutes": 10,
+    "likert_labels": ["非常不同意", "不同意", "普通", "同意", "非常同意"]
+  },
+  "dimensions": {
+    "E": {
+      "label": "外向性",
+      "short_desc": "Extraversion — 社交、活躍、果斷",
+      "high_desc": "外向、健談、充滿活力，喜歡與人互動，在團體中常扮演主動發言或帶動氣氛的角色，能量來自外部互動。",
+      "low_desc": "內斂、安靜、深思，偏好獨處或小型互動，能量來自獨自思考與沉澱，不代表害羞而是更聚焦於內在世界。"
+    },
+    "A": {
+      "label": "親和性",
+      "short_desc": "Agreeableness — 信任、合作、利他",
+      "high_desc": "友善、合作、富同理心，傾向相信他人並樂於幫助，是團隊裡的潤滑劑；衝突中常扮演調解者。",
+      "low_desc": "直率、競爭性強，注重事實與邏輯多於感受；不害怕表達異議，善於談判，但需注意人際細膩度。"
+    },
+    "C": {
+      "label": "盡責性",
+      "short_desc": "Conscientiousness — 自律、有計畫、可靠",
+      "high_desc": "勤勉、有條理、自律，習慣訂目標並追蹤進度；可靠、守時，能勝任需要嚴謹流程的工作。",
+      "low_desc": "彈性、隨興，偏好邊做邊調整而非預先規劃；面對突發狀況反應快，但需注意截止期限的紀律。"
+    },
+    "N": {
+      "label": "神經質",
+      "short_desc": "Neuroticism — 情緒波動、敏感度",
+      "high_desc": "敏感、容易感到壓力或焦慮，但同時對風險與細節較敏銳；需要適度的情緒管理與支持系統。",
+      "low_desc": "情緒穩定、抗壓性強，能在壓力下保持理性決策；遇到挫折恢復快，是危機處理時的定海神針。"
+    },
+    "O": {
+      "label": "開放性",
+      "short_desc": "Openness — 好奇心、創新、想像力",
+      "high_desc": "好奇、有創意、思維開放，喜歡新觀念與多元嘗試，適合需要創新或跨領域整合的工作。",
+      "low_desc": "務實、傳統，偏好已驗證的方法與既定流程，執行力強且穩定，是維持系統穩定運作的關鍵角色。"
+    }
+  },
+  "items": [
+    { "id": "BF01", "dimension": "E", "reverse": false, "statement": "我認為自己是個健談的人。" },
+    { "id": "BF02", "dimension": "A", "reverse": true,  "statement": "我有時會挑剔別人。" },
+    { "id": "BF03", "dimension": "C", "reverse": false, "statement": "我做事仔細徹底。" },
+    { "id": "BF04", "dimension": "N", "reverse": false, "statement": "我容易感到沮喪、心情低落。" },
+    { "id": "BF05", "dimension": "O", "reverse": false, "statement": "我富有原創力，能想出新點子。" },
+    { "id": "BF06", "dimension": "E", "reverse": true,  "statement": "我比較沉默寡言。" },
+    { "id": "BF07", "dimension": "A", "reverse": false, "statement": "我樂於助人、為他人著想。" },
+    { "id": "BF08", "dimension": "C", "reverse": true,  "statement": "我有時做事不太細心。" },
+    { "id": "BF09", "dimension": "N", "reverse": true,  "statement": "我心情通常很放鬆，能妥善處理壓力。" },
+    { "id": "BF10", "dimension": "O", "reverse": false, "statement": "我對很多不同的事物都感到好奇。" },
+    { "id": "BF11", "dimension": "E", "reverse": false, "statement": "我精力充沛、活力旺盛。" },
+    { "id": "BF12", "dimension": "A", "reverse": true,  "statement": "我常與人爭論、起衝突。" },
+    { "id": "BF13", "dimension": "C", "reverse": false, "statement": "我是個可靠、值得信賴的人。" },
+    { "id": "BF14", "dimension": "N", "reverse": false, "statement": "我容易感到緊張。" },
+    { "id": "BF15", "dimension": "O", "reverse": false, "statement": "我有創造力、想像力豐富。" },
+    { "id": "BF16", "dimension": "E", "reverse": false, "statement": "我能夠激發他人熱情。" },
+    { "id": "BF17", "dimension": "A", "reverse": false, "statement": "我懂得包容、原諒他人。" },
+    { "id": "BF18", "dimension": "C", "reverse": true,  "statement": "我做事容易缺乏條理。" },
+    { "id": "BF19", "dimension": "N", "reverse": false, "statement": "我很容易擔心。" },
+    { "id": "BF20", "dimension": "O", "reverse": false, "statement": "我有活躍的想像力。" },
+    { "id": "BF21", "dimension": "E", "reverse": true,  "statement": "我常常很安靜、不愛說話。" },
+    { "id": "BF22", "dimension": "A", "reverse": false, "statement": "我大致上信任別人。" },
+    { "id": "BF23", "dimension": "C", "reverse": true,  "statement": "我容易偷懶、敷衍了事。" },
+    { "id": "BF24", "dimension": "N", "reverse": true,  "statement": "我情緒上很穩定，不容易心煩意亂。" },
+    { "id": "BF25", "dimension": "O", "reverse": false, "statement": "我發明、構思能力很好。" },
+    { "id": "BF26", "dimension": "E", "reverse": false, "statement": "我有自信的個性。" },
+    { "id": "BF27", "dimension": "A", "reverse": true,  "statement": "我有時對別人冷淡、保持距離。" },
+    { "id": "BF28", "dimension": "C", "reverse": false, "statement": "我會努力堅持完成手邊的工作。" },
+    { "id": "BF29", "dimension": "N", "reverse": false, "statement": "我有時會喜怒無常、心情起伏大。" },
+    { "id": "BF30", "dimension": "O", "reverse": false, "statement": "我重視藝術、美學的體驗。" },
+    { "id": "BF31", "dimension": "E", "reverse": true,  "statement": "我有時害羞、矜持。" },
+    { "id": "BF32", "dimension": "A", "reverse": false, "statement": "我幾乎對每個人都很體貼、和善。" },
+    { "id": "BF33", "dimension": "C", "reverse": false, "statement": "我做事很有效率。" },
+    { "id": "BF34", "dimension": "N", "reverse": true,  "statement": "我在緊張情境中也能保持冷靜。" },
+    { "id": "BF35", "dimension": "O", "reverse": true,  "statement": "我比較偏好例行性、有規律的工作。" },
+    { "id": "BF36", "dimension": "E", "reverse": false, "statement": "我外向、擅長社交。" },
+    { "id": "BF37", "dimension": "A", "reverse": true,  "statement": "我有時對別人態度粗魯。" },
+    { "id": "BF38", "dimension": "C", "reverse": false, "statement": "我會擬定計畫並貫徹執行。" },
+    { "id": "BF39", "dimension": "N", "reverse": false, "statement": "我容易感到焦慮不安。" },
+    { "id": "BF40", "dimension": "O", "reverse": false, "statement": "我喜歡思考、玩味抽象的概念。" },
+    { "id": "BF41", "dimension": "O", "reverse": true,  "statement": "我對藝術或文學沒什麼興趣。" },
+    { "id": "BF42", "dimension": "A", "reverse": false, "statement": "我喜歡與人合作完成任務。" },
+    { "id": "BF43", "dimension": "C", "reverse": true,  "statement": "我做事容易分心。" },
+    { "id": "BF44", "dimension": "O", "reverse": false, "statement": "我擅長欣賞文學、藝術或音樂。" }
+  ]
+}

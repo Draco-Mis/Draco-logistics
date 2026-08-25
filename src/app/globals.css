@@ -1,0 +1,329 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 尊重使用者的「減少動態效果」系統設定：關閉進場動畫 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===================================================
+   Light Mode（預設）
+   =================================================== */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased font-sans;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+    letter-spacing: -0.005em;
+  }
+  /* 標題字間距收緊（Apple 風格） */
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* 主按鈕：更圓、更微妙的陰影、hover 有 scale */
+  .btn-primary {
+    @apply px-4 py-2.5 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-xl transition-all duration-200 ease-apple disabled:opacity-50 active:scale-[0.98] shadow-sm hover:shadow;
+  }
+  .btn-secondary {
+    @apply px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-xl transition-all duration-200 ease-apple active:scale-[0.98];
+  }
+  .btn-danger {
+    @apply px-4 py-2.5 bg-red-500 hover:bg-red-600 text-white font-medium rounded-xl transition-all duration-200 ease-apple active:scale-[0.98];
+  }
+  /* Input：更大 padding、更圓、focus 用 accent 色 */
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-accent-500/30 focus:border-accent-500 outline-none transition-all duration-200 ease-apple text-gray-900 bg-white;
+  }
+  /* Card：更圓角、padding 加大、陰影細膩、無邊框（陰影替代） */
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-5 transition-shadow duration-300 ease-apple;
+  }
+  .card-hover {
+    @apply hover:shadow-card-hover;
+  }
+  /* 毛玻璃工具類（給 Sidebar / TopBar 用） */
+  .glass-bar {
+    @apply backdrop-blur-xl bg-white/70 border border-white/40;
+  }
+  .glass-dark {
+    @apply backdrop-blur-xl bg-primary-900/85 border border-white/5;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+/* ===================================================
+   Dark Mode — 全域覆蓋
+   用 CSS 一次處理所有頁面的文字/背景/邊框
+   不需要在每個 JSX 元素加 dark: 前綴
+   =================================================== */
+
+/* -- Body / 大區塊 -- */
+.dark body,
+.dark .min-h-screen {
+  background-color: #0a0f1a;
+  color: #e5e7eb;
+}
+
+/* -- Card -- */
+.dark .card {
+  background-color: #14181f;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* -- Glass bar 暗色版（用半透明深灰，呼應 Apple Big Sur 風） -- */
+.dark .glass-bar {
+  background-color: rgba(20, 24, 31, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* -- Input / Select -- */
+.dark .input-field,
+.dark select.input-field,
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="tel"],
+.dark input[type="password"],
+.dark input[type="date"],
+.dark input[type="number"],
+.dark select,
+.dark textarea {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #f3f4f6 !important;
+}
+.dark .input-field::placeholder,
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+/* -- Buttons -- */
+.dark .btn-secondary {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+.dark .btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+/* -- 文字顏色自動反轉 -- */
+/* 灰階 */
+.dark .text-black { color: #f3f4f6 !important; }
+.dark .text-gray-900 { color: #f3f4f6 !important; }
+.dark .text-gray-800 { color: #e5e7eb !important; }
+.dark .text-gray-700 { color: #d1d5db !important; }
+.dark .text-gray-600 { color: #9ca3af !important; }
+.dark .text-gray-500 { color: #6b7280 !important; }
+.dark .text-gray-400 { color: #6b7280 !important; }
+
+/* 功能色：深色變淺色 */
+.dark .text-primary-600 { color: #60a5fa !important; }
+.dark .text-primary-700 { color: #93c5fd !important; }
+.dark .text-blue-700 { color: #93c5fd !important; }
+.dark .text-blue-600 { color: #60a5fa !important; }
+.dark .text-blue-800 { color: #93c5fd !important; }
+.dark .text-green-800 { color: #6ee7b7 !important; }
+.dark .text-green-700 { color: #6ee7b7 !important; }
+.dark .text-green-600 { color: #34d399 !important; }
+.dark .text-red-600 { color: #f87171 !important; }
+.dark .text-red-500 { color: #f87171 !important; }
+.dark .text-red-700 { color: #fca5a5 !important; }
+.dark .text-red-800 { color: #fca5a5 !important; }
+.dark .text-orange-600 { color: #fb923c !important; }
+.dark .text-orange-500 { color: #fb923c !important; }
+.dark .text-yellow-600 { color: #fbbf24 !important; }
+.dark .text-yellow-800 { color: #fde68a !important; }
+.dark .text-amber-500 { color: #f59e0b !important; }
+.dark .text-amber-700 { color: #fbbf24 !important; }
+.dark .text-amber-800 { color: #fde68a !important; }
+.dark .text-amber-900 { color: #fde68a !important; }
+.dark .text-purple-800 { color: #c4b5fd !important; }
+.dark .text-indigo-800 { color: #a5b4fc !important; }
+
+/* Badge 例外：有自己背景色的 badge 內文字保持原色不反轉 */
+.dark .badge.text-black { color: #000 !important; }
+.dark .badge.text-amber-900 { color: #78350f !important; }
+.dark .badge.text-blue-800 { color: #1e40af !important; }
+.dark .badge.text-yellow-800 { color: #854d0e !important; }
+.dark .badge.text-purple-800 { color: #6b21a8 !important; }
+.dark .badge.text-indigo-800 { color: #3730a3 !important; }
+.dark .badge.text-green-800 { color: #166534 !important; }
+.dark .badge.text-green-700 { color: #15803d !important; }
+
+/* 提示框內的深色文字（在深背景上需要調亮） */
+.dark .text-yellow-700 { color: #fbbf24 !important; }
+.dark .text-blue-800 { color: #93c5fd !important; }
+.dark .text-amber-700 { color: #fbbf24 !important; }
+.dark .text-amber-800 { color: #fde68a !important; }
+.dark .text-green-900 { color: #86efac !important; }
+.dark .text-red-800 { color: #fca5a5 !important; }
+.dark .text-orange-800 { color: #fed7aa !important; }
+
+/* -- 背景色反轉 -- */
+.dark .bg-white { background-color: #111827 !important; }
+.dark .bg-gray-50 { background-color: #0a0f1a !important; }
+.dark .bg-gray-100 { background-color: #1f2937 !important; }
+.dark .bg-gray-200 { background-color: #374151 !important; }
+
+/* -- 邊框反轉 -- */
+.dark .border-gray-100 { border-color: #1f2937 !important; }
+.dark .border-gray-200 { border-color: #374151 !important; }
+.dark .border-gray-300 { border-color: #4b5563 !important; }
+
+/* -- 淺色提示背景（黃、藍、綠、紅 的 -50 變體）-- */
+.dark .bg-yellow-50 { background-color: #422006 !important; }
+.dark .bg-blue-50 { background-color: #0c1a3a !important; }
+.dark .bg-green-50 { background-color: #052e16 !important; }
+.dark .bg-red-50 { background-color: #450a0a !important; }
+.dark .bg-orange-50 { background-color: #431407 !important; }
+/* 強調色系淺底：深色模式補上對應深底（Toast / chips / 漸層卡 / 圖示底等新元件用） */
+.dark .bg-accent-50 { background-color: #0c2438 !important; }
+.dark .bg-emerald-50 { background-color: #04241f !important; }
+.dark .bg-amber-50 { background-color: #3a2a08 !important; }
+.dark .bg-fuchsia-50 { background-color: #3a0a38 !important; }
+.dark .bg-sky-50 { background-color: #0a2436 !important; }
+.dark .bg-rose-50 { background-color: #3a0a14 !important; }
+.dark .bg-purple-50 { background-color: #2a0a3a !important; }
+.dark .bg-accent-100 { background-color: #0f2f4a !important; }
+.dark .bg-fuchsia-100 { background-color: #4a114a !important; }
+.dark .bg-sky-100 { background-color: #0f2f4a !important; }
+.dark .bg-amber-50 { background-color: #451a03 !important; }
+.dark .bg-lime-50 { background-color: #1a2e05 !important; }
+.dark .bg-purple-50 { background-color: #2e1065 !important; }
+
+/* -- 表格 hover -- */
+.dark .hover\:bg-gray-50:hover { background-color: #1f2937 !important; }
+.dark tr.border-b { border-color: #1f2937; }
+.dark thead.border-b { border-color: #374151; }
+
+/* -- 分頁按鈕 -- */
+.dark .bg-white.border.border-gray-200 {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #d1d5db !important;
+}
+
+/* -- Modal 背景 -- */
+.dark .bg-black\/50,
+.dark .bg-black\/60 {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+/* -- 底部導航 -- */
+.dark nav.fixed.bottom-0 {
+  background-color: #111827;
+  border-color: #1f2937;
+}
+
+/* -- 圖表（Recharts） -- */
+.dark .recharts-cartesian-grid line { stroke: #1f2937; }
+.dark .recharts-text { fill: #9ca3af; }
+.dark .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #e5e7eb !important;
+}
+
+/* -- Checkbox -- */
+.dark input[type="checkbox"] {
+  accent-color: #3b82f6;
+}
+
+/* -- 完整度 progress bar -- */
+.dark .bg-gray-100.rounded-full {
+  background-color: #1f2937 !important;
+}
+
+/* -- 選取高亮 -- */
+.dark .bg-primary-50 {
+  background-color: #0c1a3a !important;
+}
+.dark .bg-primary-50\/30 {
+  background-color: rgba(12, 26, 58, 0.3) !important;
+}
+
+/* ===================================================
+   科技感・深色戰情室（preview: feat/tech-command-center）
+   全域套用，不需逐頁改。只在 .dark（本分支預設深色）生效。
+   =================================================== */
+/* 背景：深藍黑 + 兩道霓虹光暈 + 細網格 */
+.dark body {
+  background-color: #070b16 !important;
+  background-image:
+    radial-gradient(1100px 550px at 78% -12%, rgba(34,211,238,0.10), transparent 60%),
+    radial-gradient(900px 500px at 3% 112%, rgba(139,92,246,0.10), transparent 60%),
+    linear-gradient(rgba(148,163,184,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,0.045) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 38px 38px, 38px 38px;
+  background-attachment: fixed;
+}
+/* 主內容容器透明，讓 body 的戰情室背景透出來 */
+.dark .min-h-screen.bg-gray-50 { background: transparent !important; }
+
+/* 卡片：玻璃態面板 + 霓虹細邊 + 微光 */
+.dark .card {
+  background-color: rgba(15, 22, 38, 0.72) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 34px rgba(2,6,23,0.55), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+.dark .card:hover {
+  border-color: rgba(56, 189, 248, 0.32);
+  box-shadow: 0 0 0 1px rgba(56,189,248,0.14), 0 10px 44px rgba(34,211,238,0.10);
+}
+
+/* 主按鈕：電光漸層 + 光暈 */
+.dark .btn-primary {
+  background-image: linear-gradient(135deg, #06b6d4, #3b82f6) !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: 0 0 18px rgba(56,189,248,0.30) !important;
+}
+.dark .btn-primary:hover { box-shadow: 0 0 26px rgba(56,189,248,0.5) !important; }
+
+/* 標題微光 + 大數字發光（戰情儀表感） */
+.dark h1, .dark h2 { text-shadow: 0 0 20px rgba(56,189,248,0.14); }
+.dark .text-2xl.tabular-nums,
+.dark .text-3xl.tabular-nums { text-shadow: 0 0 16px rgba(56,189,248,0.38); }
+
+/* 側邊欄玻璃更深透 */
+.dark .glass-dark { background-color: rgba(8, 12, 22, 0.9) !important; }
+.dark .glass-bar { background-color: rgba(10, 15, 26, 0.7) !important; }
+
+/* accent 文字更「電」 */
+.dark .text-accent-600, .dark .text-accent-700 { color: #38bdf8 !important; }
+
+/* 輸入框：深玻璃 + 霓虹聚焦 */
+.dark .input-field {
+  background-color: rgba(15, 22, 38, 0.6) !important;
+  border-color: rgba(56, 189, 248, 0.15) !important;
+}
+.dark .input-field:focus { box-shadow: 0 0 0 3px rgba(56,189,248,0.18) !important; }
+
+/* 深色修正：儀表板三張淺色漸層小卡（今日小提示/今日金句/高雄天氣）
+   原本漸層結尾接白色，深色下仍是亮底、淺灰字看不清 → 拿掉淺漸層露出深卡底、標題轉亮 */
+.dark .bg-gradient-to-br.from-accent-50,
+.dark .bg-gradient-to-br.from-fuchsia-50,
+.dark .bg-gradient-to-br.from-sky-50 { background-image: none !important; }
+.dark .text-accent-900 { color: #7dd3fc !important; }
+.dark .text-fuchsia-900 { color: #f0abfc !important; }
+.dark .text-sky-900 { color: #7dd3fc !important; }
+.dark .border-accent-100 { border-color: rgba(56,189,248,0.18) !important; }
+.dark .border-fuchsia-100 { border-color: rgba(217,70,239,0.18) !important; }
+.dark .border-sky-100 { border-color: rgba(56,189,248,0.18) !important; }

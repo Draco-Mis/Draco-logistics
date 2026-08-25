@@ -1,0 +1,20 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/status-check",
+      "schedule": "0 16 * * *"
+    },
+    {
+      "path": "/api/cron/weekly-summary",
+      "schedule": "0 0 * * 1"
+    },
+    {
+      "path": "/api/cron/monthly-summary",
+      "schedule": "0 0 1 * *"
+    },
+    {
+      "path": "/api/cron/diagnostics",
+      "schedule": "0 20 * * *"
+    }
+  ]
+}
