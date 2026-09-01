@@ -1,0 +1,24 @@
+# Draco LOP Requirements / TODO
+
+## 緊急
+- [ ] 回填 1,111 筆客戶真實建檔日期
+- [ ] 從 Notion CSV 匯出檔取得原始日期
+- [ ] 透過 Supabase SQL Editor 批次更新客戶 created_date
+
+## 高優先
+- [x] 通知系統改為手動標記已讀
+- [x] 客戶列表分頁，每頁 20 筆
+- [ ] 產業分類與上市櫃股票代碼補值
+- [ ] migration 009 / 010 commit
+
+## 中優先
+- [ ] 啟用 Email 通知（Resend）
+- [ ] 介宏系統同步
+- [ ] 客戶搜尋改為 Supabase 全文搜尋
+- [ ] customer_contacts 頁面操作 UI
+- [ ] status=locked 時顯示鎖檔原因
+
+## 長期規劃
+- [ ] Telegram Bot 完整邏輯
+- [ ] 管理員數據儀表板
+- [ ] audit log UI
