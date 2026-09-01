@@ -14,8 +14,8 @@
 ## 中優先
 - [x] 啟用 Email 通知（Resend）
 - [ ] 介宏系統同步
-- [ ] 客戶搜尋改為 Supabase 全文搜尋
-- [ ] customer_contacts 頁面操作 UI
+- [x] 客戶搜尋改為 Supabase 全文搜尋
+- [x] customer_contacts 頁面操作 UI
 - [ ] status=locked 時顯示鎖檔原因
 
 ## 長期規劃
